@@ -12,7 +12,7 @@ fi
 
 # Now move into the directory and setup pathogen
 cd ~/.vim
-git submodule add https://github.com/tpope/vim-pathogen.git autoload
+git submodule add https://github.com/rvalente/vim-pathogen.git autoload
 git submodule init
 git submodule update
 
@@ -27,3 +27,7 @@ for element in $(seq 0 $((${#modules[@]} - 1))); do
   reponame=`echo "${modules[$element]}" | cut -d"/" -f5`
   git submodule add "${modules[$element]}" ~/.vim/bundle/"${reponame}" 
 done
+
+# No go ahead and ensure everything is updated
+git submodule init
+git submodule update
