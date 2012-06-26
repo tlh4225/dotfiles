@@ -13,3 +13,5 @@
 	 editor = /usr/bin/vim
 	 compression = 9
 	 preloadindex = true
+[credential]
+	 helper = osxkeychain
