@@ -54,7 +54,6 @@ try
 catch
 endtry
 
-
 if &t_Co >= 256
    set background=dark
    let g:solarized_termcolors=256
