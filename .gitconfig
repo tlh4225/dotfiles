@@ -1,0 +1,15 @@
+[user]
+	 name = Ronald Valente
+	 email = rawn027@gmail.com
+[color]
+	 branch = auto
+	 diff = auto
+	 interactive = auto
+	 status = auto
+	 ui = auto
+[pack]
+	 threads = 0
+[core]
+	 editor = /usr/bin/vim
+	 compression = 9
+	 preloadindex = true
