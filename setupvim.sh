@@ -5,9 +5,9 @@
 # Else make the .vim directory
 if [[ -d ~/.vim ]]; then
   mv ~/.vim ~/.vim.old
-  git clone https://github.com/rvalente/.vim.git
+  git clone https://github.com/rvalente/.vim.git ~/.vim
 else
-  git clone https://github.com/rvalente/.vim.git
+  git clone https://github.com/rvalente/.vim.git ~/.vim
 fi
 
 # Now move into the directory and setup pathogen
