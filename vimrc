@@ -1,9 +1,9 @@
+" No Compatible is the most important setting and must be first!
 set nocompatible
+
+" Load up Pathogen to load the rest of the modules
 call pathogen#infect()
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => General
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sets how many lines of history VIM has to remember
 set history=700
 
@@ -35,37 +35,21 @@ set showmatch     " set show matching parenthesis
 set ruler         " Always show position
 
 " Whitespace Config
-" Configure backspace so it acts as it should act
 set backspace=eol,start,indent
-set whichwrap+=<,>,h,l
-
-" Ignore compiled files
 set wildignore=*.o,*~,*.pyc
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => VIM user interface
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Set 7 lines to the cursor - when moving vertically using j/k
+" User Interface Config
 set so=7
-
-" Turn on the WiLd menu
 set wildmenu
-
-" Performance and Regex
-" Don't redraw while executing macros (good performance config)
 set lazyredraw
-
-" For regular expressions turn magic on
 set magic
+set title         " change the terminal's title
 
 " Search Configuration
 set ignorecase    " ignore case when searching
 set smartcase     " become case sensitive if you have capitals
 set hlsearch      " highlight search terms
 set incsearch     " show search matches as you type
-
-" Useability Options
-set title         " change the terminal's title
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
