@@ -45,10 +45,11 @@ LSCOLORS='ExFxCxDxBxegedabagacad'
 export GREP_OPTIONS GREP_COLOR CLICOLOR LSCOLORS
 
 # Update History
-HISTSIZE='10000'
-HISTCONTROL='ignoreboth'
+HISTCONTROL=erasedups
+HISTSIZE=10000
 HISTTIMEFORMAT='%F %T '
 export HISTSIZE HISTCONTROL HISTTIMEFORMAT
+shopt -s histappend
 
 # Set Path
 PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin"
