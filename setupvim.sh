@@ -1,32 +1,28 @@
 #!/bin/bash
 
-# First check to see if there is a .vim directory
-# If there is move it aside and make a new empty one
-# Else make the .vim directory
+# Check to see if there is a .vim folder
+# If there is, move it and make a symlink to the new one
 if [[ -d ~/.vim ]]; then
   mv ~/.vim ~/.vim.old
-  git clone https://github.com/rvalente/.vim.git ~/.vim
+  ln -s "${pwd}/.vim" ~/.vim
 else
-  git clone https://github.com/rvalente/.vim.git ~/.vim
+  ln -s "${pwd}/.vim" ~/.vim
 fi
 
-# Now move into the directory and setup pathogen
-cd ~/.vim
-git submodule add https://github.com/rvalente/vim-pathogen.git autoload
+
+git submodule add https://github.com/rvalente/vim-pathogen.git .vim/autoload
 
 # Ensure there is a bundle directory for pathogen
-mkdir -p ~/.vim/bundle
+mkdir -p .vim/bundle
 
 # Create list of modules to add
-modules=( https://github.com/scrooloose/syntastic.git https://github.com/rodjek/vim-puppet.git https://github.com/altercation/vim-colors-solarized.git https://github.com/kien/ctrlp.vim.git https://github.com/godlygeek/tabular.git https://github.com/msanders/snipmate.vim.git https://github.com/tpope/vim-fugitive.git https://github.com/tpope/vim-pastie.git https://github.com/tpope/vim-markdown.git https://github.com/scrooloose/nerdtree.git )
-
-# Now add the submodules to the bundle directory
-for element in $(seq 0 $((${#modules[@]} - 1))); do
-  reponame=`echo "${modules[$element]}" | cut -d"/" -f5`
-  cd ~/.vim
-  git submodule add "${modules[$element]}" "bundle/${reponame}"
-done
-
-# No go ahead and ensure everything is updated
-git submodule init
-git submodule update
+git submodule add https://github.com/scrooloose/syntastic.git .vim/bundle/syntastic
+git submodule add https://github.com/rodjek/vim-puppet.git .vim/bundle/vim-puppet
+git submodule add https://github.com/altercation/vim-colors-solarized.git .vim/bundle/solarized
+git submodule add https://github.com/kien/ctrlp.vim.git .vim/bundle/ctrlp
+git submodule add https://github.com/godlygeek/tabular.git .vim/bundle/tabular
+git submodule add https://github.com/msanders/snipmate.vim.git .vim/bundle/snipmate
+git submodule add https://github.com/tpope/vim-fugitive.git .vim/bundle/vim-fugitive
+git submodule add https://github.com/tpope/vim-pastie.git .vim/bundle/vim-pastie
+git submodule add https://github.com/tpope/vim-markdown.git .vim/bundle/vim-markdown
+git submodule add https://github.com/scrooloose/nerdtree.git .vim/bundle/nerdtree
