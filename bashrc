@@ -27,6 +27,9 @@ shopt -s expand_aliases
 # No core dumps for me
 ulimit -c 0
 
+# Clear Duplicates in History
+history -c
+
 bind 'set show-all-if-ambiguous on'
 bind 'set visible-stats on'
 bind "set completion-ignore-case on"
