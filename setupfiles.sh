@@ -7,7 +7,7 @@ for element in $(seq 0 $((${#files[@]} - 1))); do
   dotfile=".${file}"
   pwd=`pwd`
 
-  if [[ -e ~/"${dotfile}" ]]; then
+  if [[ -f ~/"${dotfile}" ]]; then
     mv ~/"${dotfile}" ~/"${dotfile}".old
   fi
   ln -s "${pwd}/${file}" ~/"${dotfile}"
