@@ -31,19 +31,29 @@ bind 'set show-all-if-ambiguous on'
 bind 'set visible-stats on'
 bind "set completion-ignore-case on"
 
-# ENV OPTIONS
+# Editor and Pager Options
 EDITOR='/usr/bin/vim'
 VISUAL=$EDITOR
 PAGER='less -m'
+export EDITOR VISUAL PAGER
+
+# Update Colors
 GREP_OPTIONS='--color=auto'
 GREP_COLOR='1;32'
 CLICOLOR='1'
 LSCOLORS='ExFxCxDxBxegedabagacad'
-HISTSIZE='10000'
-HISTCONTROL='ignoreboth'
-PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin"
+export GREP_OPTIONS GREP_COLOR CLICOLOR LSCOLORS
 
-export PATH EDITOR VISUAL PAGER GREP_OPTIONS GREP_COLOR CLICOLOR LSCOLORS HISTSIZE HISTCONTROL
+# Update History
+HISTCONTROL=erasedups
+HISTSIZE=10000
+HISTTIMEFORMAT='%F %T '
+export HISTSIZE HISTCONTROL HISTTIMEFORMAT
+shopt -s histappend
+
+# Set Path
+PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin"
+export PATH
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
