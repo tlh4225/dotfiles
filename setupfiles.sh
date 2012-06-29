@@ -7,15 +7,7 @@ for element in $(seq 0 $((${#files[@]} - 1))); do
   dotfile=".${file}"
   pwd=`pwd`
 
-  if [[ -f ~/"${dotfile}" ]]; then
-    mv ~/"${dotfile}" ~/"${dotfile}".old
-  fi
   ln -s "${pwd}/${file}" ~/"${dotfile}"
 done
 
-if [[ -d ~/.vim ]]; then
-  mv ~/.vim ~/.vim.old
-  ln -s "${pwd}/.vim" ~/.vim
-else
-  ln -s "${pwd}/.vim" ~/.vim
-fi
+ln -s "${pwd}/.vim" ~/.vim
