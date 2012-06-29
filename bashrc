@@ -27,26 +27,32 @@ shopt -s expand_aliases
 # No core dumps for me
 ulimit -c 0
 
-# Clear Duplicates in History
-history -c
-
 bind 'set show-all-if-ambiguous on'
 bind 'set visible-stats on'
 bind "set completion-ignore-case on"
 
-# ENV OPTIONS
+# Editor and Pager Options
 EDITOR='/usr/bin/vim'
 VISUAL=$EDITOR
 PAGER='less -m'
+export EDITOR VISUAL PAGER
+
+# Update Colors
 GREP_OPTIONS='--color=auto'
 GREP_COLOR='1;32'
 CLICOLOR='1'
 LSCOLORS='ExFxCxDxBxegedabagacad'
+export GREP_OPTIONS GREP_COLOR CLICOLOR LSCOLORS
+
+# Update History
 HISTSIZE='10000'
 HISTCONTROL='ignoreboth'
-PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin"
+HISTTIMEFORMAT='%F %T '
+export HISTSIZE HISTCONTROL HISTTIMEFORMAT
 
-export PATH EDITOR VISUAL PAGER GREP_OPTIONS GREP_COLOR CLICOLOR LSCOLORS HISTSIZE HISTCONTROL
+# Set Path
+PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin"
+export PATH
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
