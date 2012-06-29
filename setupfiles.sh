@@ -12,3 +12,10 @@ for element in $(seq 0 $((${#files[@]} - 1))); do
   fi
   ln -s "${pwd}/${file}" ~/"${dotfile}"
 done
+
+if [[ -d ~/.vim ]]; then
+  mv ~/.vim ~/.vim.old
+  ln -s "${pwd}/.vim" ~/.vim
+else
+  ln -s "${pwd}/.vim" ~/.vim
+fi
