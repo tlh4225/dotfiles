@@ -1,17 +1,20 @@
 [user]
-	 name = Ronald Valente
-	 email = rawn027@gmail.com
+  name = Ronald Valente
+  email = rawn027@gmail.com
 [color]
-	 branch = auto
-	 diff = auto
-	 interactive = auto
-	 status = auto
-	 ui = auto
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+  ui = auto
 [pack]
-	 threads = 0
+  threads = 0
 [core]
-	 editor = /usr/bin/vim
-	 compression = 9
-	 preloadindex = true
+  editor = /usr/bin/vim
+  compression = 9
+  preloadindex = true
 [credential]
-	 helper = osxkeychain
+  helper = osxkeychain
+[alias]
+  co = checkout
+  br = branch
