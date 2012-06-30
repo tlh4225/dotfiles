@@ -5,7 +5,7 @@ set nocompatible
 call pathogen#infect()
 
 " Sets how many lines of history VIM has to remember
-set history=700
+set history=1000
 
 " Enable filetype plugins
 filetype plugin on
@@ -13,6 +13,9 @@ filetype indent on
 
 " Set to auto read when a file is changed from the outside
 set autoread
+
+" Fast saving
+nmap <leader>w :w!<cr>
 
 " Tab config
 set tabstop=2     " width of tab character
@@ -36,10 +39,10 @@ set ruler         " Always show position
 
 " Whitespace Config
 set backspace=eol,start,indent
-set wildignore=*.o,*~,*.pyc
 
-" User Interface Config
 set so=7
+set wildmode=longest:full
+set wildignore=*.o,*~,*.pyc,*.DS_Store
 set wildmenu
 set lazyredraw
 set magic
@@ -50,6 +53,12 @@ set ignorecase    " ignore case when searching
 set smartcase     " become case sensitive if you have capitals
 set hlsearch      " highlight search terms
 set incsearch     " show search matches as you type
+
+" No annoying sound on errors
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -82,11 +91,31 @@ nmap <leader>v :tabedit $MYVIMRC<CR>
 " Allow save as sudo
 cmap w!! w !sudo tee % >/dev/null
 
+""""""""""""""""""""""""""""""
+" => Visual mode related
+""""""""""""""""""""""""""""""
+" Visual mode pressing * or # searches for the current selection
+" Super useful! From an idea by Michael Naumann
+vnoremap <silent> * :call VisualSelection('f')<CR>
+vnoremap <silent> # :call VisualSelection('b')<CR>
+
 " Smart way to move between windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
+" Return to last edit position when opening files (You want this!)
+autocmd BufReadPost *
+     \ if line("'\"") > 0 && line("'\"") <= line("$") |
+     \   exe "normal! g`\"" |
+     \ endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Editing mappings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Remap VIM 0 to first non-blank character
+map 0 ^
 
 """"""""""""""""""""""""""""""
 " => Status line
