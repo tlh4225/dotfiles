@@ -3,7 +3,7 @@ if [ -e /usr/share/terminfo/78/xterm-256color ]; then
 	export TERM='xterm-256color'
 
 	# LOAD SOLARIZED COLORS
-	if [[ -f "$HOME/.bash_colors" ]]; then
+	if [[ -e "$HOME/.bash_colors" ]]; then
 		source "$HOME/.bash_colors"
 	fi
 
@@ -16,7 +16,7 @@ if [ -e /usr/share/terminfo/78/xterm-256color ]; then
 fi
 	
 # LOAD ALIASES
-if [[ -f "$HOME/.bash_aliases" ]]; then
+if [[ -e "$HOME/.bash_aliases" ]]; then
 	source "$HOME/.bash_aliases"
 fi
 

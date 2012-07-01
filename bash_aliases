@@ -13,7 +13,7 @@ alias s='ssh -Y -ladministrator'
 alias nx='ssh -ladmin'
 
 # Git Aliases
-if [[ -f "/usr/bin/git" ]]; then
+if [[ -e `which git` ]]; then
 	alias gp='git push'
 	alias gc='git commit -v -a'
 	alias ga='git add .'
