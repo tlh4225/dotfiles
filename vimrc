@@ -74,6 +74,11 @@ set t_Co=256
 let g:solarized_termcolors=256
 colorscheme solarized
 
+" GUI options that need to be set here first
+" Remove exta, useless button bar.
+set guioptions-=T
+set guioptions+=t
+
 " Encording Setup
 set encoding=utf8
 set ffs=unix,dos,mac
