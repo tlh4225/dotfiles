@@ -1,6 +1,6 @@
 #!/bin/bash
 gems=(puppet puppet-lint methadone pry tmuxinator httparty)
-pkgs=(git git-flow wget ack bash-completion tmux fping)
+pkgs=(git git-flow wget libksba ack bash-completion tmux fping)
 
 for gem in ${gems[*]}; do
   if [[ -f `which rvm` ]]; then
