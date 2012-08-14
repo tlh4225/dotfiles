@@ -13,3 +13,8 @@ fi
 
 # Load RVM Bash Completion
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
+
+if [ -f $HOME/.bash_profile.local ]; then
+    . $HOME/.bash_profile.local
+fi
+

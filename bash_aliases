@@ -1,6 +1,7 @@
 # Shell Aliases
 alias mkdir='mkdir -p'
 alias ..='cd ..'
+alias ns='netstat -lant | grep LISTEN'
 
 # Mac OS X Specific
 alias ll='ls -la'
@@ -20,4 +21,8 @@ if [[ -e `which git` ]]; then
 	alias gb='git branch'
 	alias gs='git status'
 	alias gl='git log'
+fi
+
+if [ -f $HOME/.bash_aliases.local ]; then
+	. $HOME/.bash_aliases.local
 fi

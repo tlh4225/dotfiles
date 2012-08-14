@@ -62,3 +62,7 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # Load Tmuxinator
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+
+if [ -f $HOME/.bashrc.local ]; then
+	. $HOME/.bashrc.local
+fi
