@@ -11,6 +11,10 @@ else
     brew install bash-completion
 fi
 
+if [ -f /usr/local/Cellar/git/1.7.12/share/git-core/contrib/completion/git-prompt.sh ]; then
+    . /usr/local/Cellar/git/1.7.12/share/git-core/contrib/completion/git-prompt.sh
+fi
+
 # Load RVM Bash Completion
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
 
