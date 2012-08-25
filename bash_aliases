@@ -13,6 +13,9 @@ alias sr='ssh -Y -lroot'
 alias s='ssh -Y -ladministrator'
 alias nx='ssh -ladmin'
 
+# Ruby Development
+alias be='bundle exec'
+
 # Git Aliases
 if [[ -e `which git` ]]; then
 	alias gp='git push'
