@@ -26,6 +26,7 @@ if [[ -e `which git` ]]; then
 	alias gl='git log'
 fi
 
+# Load any local aliases
 if [ -f $HOME/.bash_aliases.local ]; then
 	. $HOME/.bash_aliases.local
 fi
