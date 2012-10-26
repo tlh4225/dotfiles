@@ -1,2 +1,3 @@
-export rvm_path="/Users/rovalent/.rvm"
-export rvm_pretty_print_flag=1
+rvm_path="/Users/rovalent/.rvm"
+rvm_pretty_print_flag=1
+rvm_auto_reload_flag=1
