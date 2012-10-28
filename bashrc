@@ -10,11 +10,11 @@ if [ -e /usr/share/terminfo/78/xterm-256color ]; then
 	# Setup Git Prompt Variables
 	export GIT_PS1_SHOWDIRTYSTATE=true
 	export GIT_PS1_SHOWUNTRACKEDFILES=true
-	
+
 	# Set Prompt
 	PS1="$base0[$green\u$base0@$red\h$base0:$orange\W$blue\$(__git_ps1)$base0]$green\$$base0 "
 fi
-	
+
 # LOAD ALIASES
 if [[ -e "$HOME/.bash_aliases" ]]; then
 	source "$HOME/.bash_aliases"
