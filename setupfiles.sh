@@ -1,6 +1,6 @@
 #!/bin/bash
 
-files=( gitconfig irbrc rvmrc gemrc bash_aliases bash_profile bashrc bash_login bash_colors vimrc )
+files=( gitconfig gitignore irbrc rvmrc pryrc gemrc bash_aliases bash_profile bashrc bash_login bash_colors vimrc taskrc tmux.conf ctags )
 
 for element in $(seq 0 $((${#files[@]} - 1))); do
   file="${files[$element]}"
