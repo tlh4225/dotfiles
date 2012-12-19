@@ -7,7 +7,7 @@ for element in $(seq 0 $((${#files[@]} - 1))); do
   dotfile=".${file}"
   pwd=`pwd`
 
-  ln -s "${pwd}/${file}" ~/"${dotfile}"
+  ln -sf "${pwd}/${file}" ~/"${dotfile}"
 done
 
 ln -s "${pwd}/.vim" ~/.vim
