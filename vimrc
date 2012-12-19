@@ -1,5 +1,7 @@
 set nocompatible
+
 call pathogen#infect()
+call pathogen#helptags()
 
 " Sets how many lines of history VIM has to remember
 set history=1000
