@@ -21,16 +21,6 @@ fi
 # Load RVM Bash Completion
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
 
-# Check for GRC
-if [ -f `brew --prefix`/etc/grc.bashrc ]; then
-  source "`brew --prefix`/etc/grc.bashrc"
-else
-  echo "Install grc via Homebrew..."
-  sleep 5
-  brew install grc
-  source "`brew --prefix`/etc/grc.bashrc"
-fi
-
 # Load Local .bash_profile if it exists last.
 if [ -f $HOME/.bash_profile.local ]; then
   source $HOME/.bash_profile.local
