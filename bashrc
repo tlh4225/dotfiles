@@ -51,18 +51,25 @@ HISTTIMEFORMAT='%F %T '
 export HISTSIZE HISTCONTROL HISTTIMEFORMAT
 shopt -s histappend
 
-# Set Path
-PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin"
-export PATH
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
 # Load RVM
 [[ -s "/Users/rovalent/.rvm/scripts/rvm" ]] && source "/Users/rovalent/.rvm/scripts/rvm"
 
-# Load Tmuxinator
-[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
-
-if [ -f $HOME/.bashrc.local ]; then
-	. $HOME/.bashrc.local
+# Load Main Bash Completion
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+  source `brew --prefix`/etc/bash_completion
+else
+  brew install bash-completion
+  source `brew --prefix`/etc/bash_completion
 fi
+
+# Source the git-prompt.sh files
+if [ -f `brew --prefix`/share/git-core/contrib/completion/git-prompt.sh ]; then
+  source `brew --prefix`/share/git-core/contrib/completion/git-prompt.sh
+fi
+
+# Load RVM Bash Completion
+[[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
+
+# Set Path
+PATH="$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$HOME/.rvm/bin"
+export PATH
