@@ -13,6 +13,7 @@ alias sr='ssh -Y -lroot'
 alias s='ssh -Y -ladministrator'
 alias nx='ssh -ladmin'
 alias ssh-x='ssh -c arcfour,blowfish-cbc -XC'
+alias e='/usr/bin/subl'
 
 # Ruby Development
 alias be='bundle exec'
