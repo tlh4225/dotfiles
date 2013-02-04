@@ -71,5 +71,5 @@ fi
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
 
 # Set Path
-PATH="$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$HOME/.rvm/bin"
+PATH="/usr/local/bin:/usr/local/sbin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$HOME/.rvm/bin"
 export PATH
