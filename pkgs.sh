@@ -1,6 +1,11 @@
 #!/bin/bash
-gems=(puppet puppet-lint methadone pry tmuxinator httparty)
-pkgs=(git nmap libksba wget ack bash-completion tmux fping ctags proctools)
+
+# Update Homebrew
+brew update
+brew tap homebrew/dupes
+
+gems=(puppet puppet-lint methadone pry httparty)
+pkgs=(bash curl git nmap autoconf automake apple-gcc42 libtool pkg-config openssl readline libyaml sqlite libxml2 libxslt libksba wget ack bash-completion tmux fping ctags proctools)
 
 for gem in ${gems[*]}; do
   if [[ -f `which rvm` ]]; then

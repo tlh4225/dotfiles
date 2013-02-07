@@ -52,7 +52,7 @@ export HISTSIZE HISTCONTROL HISTTIMEFORMAT
 shopt -s histappend
 
 # Load RVM
-[[ -s "/Users/rovalent/.rvm/scripts/rvm" ]] && source "/Users/rovalent/.rvm/scripts/rvm"
+[[ -s "/Users/tlhaas/.rvm/scripts/rvm" ]] && source "/Users/tlhaas/.rvm/scripts/rvm"
 
 # Load Main Bash Completion
 if [ -f `brew --prefix`/etc/bash_completion ]; then
